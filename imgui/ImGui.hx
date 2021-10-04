@@ -544,6 +544,14 @@ typedef ListBoxItemGetter<T> = (T, Int, String) -> Bool;
 typedef PlotLinesValueGetter<T> = (T, Int) -> Int;
 typedef PlotHistogramValueGetter<T> = (T, Int) -> Int;
 
+class Ref
+{
+    public static inline function fromRef(val:Any)
+    {
+        return Syntax.code("(_value = {0}) => {0} = _value", val);
+    }
+}
+
 @:native("ImGui")
 extern class ImGui
 {
